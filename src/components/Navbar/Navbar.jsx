@@ -29,7 +29,7 @@ const Navbar = () => {
                             <li><a>Settings</a></li>
                             <li><a>Logout</a></li>
                             <li><Link>Home</Link> </li>
-                            <li><Link>Blog</Link></li>
+                            <li><Link to="/blog">Blog</Link></li>
                             
                         </ul>
                     </div>
