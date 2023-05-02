@@ -12,7 +12,7 @@ import ErrorPage from './ErrorPage/ErrorPage.jsx';
 import Main from './components/Main/Main.jsx';
 import Blog from './components/Blog/Blog.jsx';
 import Login from './components/Login/Login.jsx';
-import Register from './components/Register/Register.jsx';
+import RegistrationPage from './components/RegistrationPage/RegistrationPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: "register",
-        element: <Register></Register>
+        element: <RegistrationPage></RegistrationPage>
       }
 
     ]
