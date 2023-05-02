@@ -30,6 +30,7 @@ const Navbar = () => {
                             <li><a>Logout</a></li>
                             <li><Link>Home</Link> </li>
                             <li><Link to="/blog">Blog</Link></li>
+                            <li><Link to="/login">Log In</Link></li>
                             
                         </ul>
                     </div>

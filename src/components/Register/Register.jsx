@@ -1,7 +1,6 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
 
-const Main = () => {
+const Register = () => {
     return (
         <div>
             
@@ -9,4 +8,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default Register;
