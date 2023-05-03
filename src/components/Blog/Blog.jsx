@@ -1,5 +1,10 @@
 import React from 'react';
-import RecipesInfo from '../RecipesInfo/RecipesInfo';
+import ReactDOM from "react-dom";
+import Pdf from "react-to-pdf";
+import App from '../../App';
+
+
+const ref = React.createRef();
 
 const Blog = () => {
 
@@ -10,7 +15,18 @@ const Blog = () => {
                 Some Frequently Asked Questions !
             </div>
             <br />
-            <div>
+
+
+            <div className="App">
+                <div className='text-center'>
+                <Pdf targetRef={ref} filename="blog.pdf">
+                    {({ toPdf }) => <button className='btn btn-outline btn-warning' onClick={toPdf}>Download Pdf</button>}
+                </Pdf>
+                </div>
+
+                <br />
+                <div ref={ref}>
+                <div>
                 <strong>1. Tell us the differences between uncontrolled and controlled components. </strong>
                 <p>Answer- The main difference between uncontrolled and controlled components are that uncontrolled components can manage their own state internally, without any external intervention whereas controlled components can't.  The state of the controlled component is not managed by another component or piece of code, but for controlled components, their state is managed by some external component or code which is then passed to the necessary state information to the controlled component.   </p>
                 <div className="divider"></div>
@@ -29,9 +45,18 @@ const Blog = () => {
                 <p>Answer- A custom hook is a function in React that allows users to reuse code between different components. It starts with the word "use" and can be used to encapsulate complex logic that would be otherwise repeated in multiple components. For example we want to fetch data from a API and use it in diiferent components, so a custom hook can be created and be used in different components.</p>
             </div>
 
+                </div>
+            </div>
+
+
+
+           
 
         </div>
     );
 };
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 
 export default Blog;
