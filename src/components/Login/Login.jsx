@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, signOut } from 'firebase/auth';
-
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 import app from '../../firebase.config';
 
 
@@ -72,19 +72,21 @@ const Login = () => {
                                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                     </label>
 
-                                    <p>New to our site? Please <Link className='text-warning' to="/register"> Register </Link></p>
                                 </div>
                                 <div className="form-control mt-6">
                                     <button className="btn btn-warning">Login</button>
                                 </div>
 
-                                <div className='text-center gap-1 grid'>
-                                    <a className='' onClick={handleGoogleSignIn}> Sign In With Google </a>
+                                <div className='text-center gap-2 flex'>
+                                    <Link className='' onClick={handleGoogleSignIn}> <button className='border rounded'>  Sign In With Google <FaGoogle/> </button> </Link>
 
-                                    <a className='' onClick={handleGithubSignIn}> Sign In With Github </a>
+                                    <Link className='' onClick={handleGithubSignIn}> <button className='border rounded'>  Sign In With GitHub <FaGithub/>   </button> </Link>
                                     
 
                                 </div>
+
+                                
+                                <p>New to our site? Please <Link className='text-warning' to="/register"> Register </Link></p>
 
 
                             </div>

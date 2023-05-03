@@ -12,6 +12,10 @@ const Main = () => {
         <div>
 
             <Banner></Banner>
+<br />
+<br />
+
+<h1 className='text-center sm:text-5xl text-amber-300'>Explore Our Chefs</h1>
 
             <div className='grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3'>
 
