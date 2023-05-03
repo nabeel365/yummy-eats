@@ -13,7 +13,6 @@ import Main from './components/Main/Main.jsx';
 import Blog from './components/Blog/Blog.jsx';
 import Login from './components/Login/Login.jsx';
 import RegistrationPage from './components/RegistrationPage/RegistrationPage.jsx';
-import ChefDetails from './components/ChefDetails/ChefDetails.jsx';
 import ViewRecipes from './components/ViewRecipes/ViewRecipes.jsx';
 
 const router = createBrowserRouter([

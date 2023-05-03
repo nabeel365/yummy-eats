@@ -1,5 +1,4 @@
 import React from 'react';
-import ChefDetails from '../ChefDetails/ChefDetails';
 import { useLoaderData, useParams } from 'react-router-dom';
 import ChefInfo from '../../ChefInfo/ChefInfo';
 

@@ -10,7 +10,7 @@ const ViewRecipes = () => {
     return (
         <div>
             {
-                allRecipes.map(recipes => <RecipesInfo
+                allRecipes.recipes.map(recipes => <RecipesInfo
                 key={recipes.id}
                 recipes={recipes}                
                 ></RecipesInfo>)
