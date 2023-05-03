@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
-import ChefInfo from '../../ChefInfo/ChefInfo';
+import ChefInfo from '../ChefInfo/ChefInfo';
 
 const Main = () => {
     const {id} = useParams();
@@ -15,6 +15,7 @@ const Main = () => {
                 chefs={chefs}
                 ></ChefInfo>)
             }
+            
         </div>
     );
 };

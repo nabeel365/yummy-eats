@@ -8,7 +8,7 @@ const ViewRecipes = () => {
     console.log(allRecipes);
 
     return (
-        <div>
+        <div >
             {
                 allRecipes.recipes.map(recipes => <RecipesInfo
                 key={recipes.id}
