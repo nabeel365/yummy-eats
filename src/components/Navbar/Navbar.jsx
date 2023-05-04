@@ -6,10 +6,13 @@ import ActiveLink from '../../ActiveLink/ActiveLink';
 
 const Navbar = () => {
 
-    const {logOut} = useContext(AuthContext);
+    const {logOut, user, setUser} = useContext(AuthContext);
     
     const handleLogOut = ()=> {
         logOut();
+        setUser({})
+        .then(result => {})
+        .catch(error => console.log(error));
     }
 
 
@@ -44,7 +47,7 @@ const Navbar = () => {
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                <img />
                             </div>
                         </label>
                         <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
