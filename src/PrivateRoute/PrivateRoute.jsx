@@ -5,10 +5,11 @@ import { Vortex } from 'react-loader-spinner'
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     if (loading) {
-        return <div className='justify-center'>
-           
+        return <div className=''>
 
-            <Vortex 
+<div className='items-center'>
+    
+<Vortex
                 visible={true}
                 height="80"
                 width="80"
@@ -17,6 +18,7 @@ const PrivateRoute = ({ children }) => {
                 wrapperClass="vortex-wrapper"
                 colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
             />
+</div>
 
         </div>
     }

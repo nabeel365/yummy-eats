@@ -41,8 +41,9 @@ const Register = () => {
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               type="text"
+              name='name'
               placeholder="Name"
-              value={name}
+              // value={name}
               onChange={(event) => setName(event.target.value)}
               required
             />
@@ -55,8 +56,9 @@ const Register = () => {
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="email"
               type="email"
+              name='email'
               placeholder="Email"
-              value={email}
+              // value={email}
               onChange={(event) => setEmail(event.target.value)}
               required
             />
@@ -69,8 +71,9 @@ const Register = () => {
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="password"
               type="password"
+              name='password'
               placeholder="Password"
-              value={password}
+              // value={password}
               onChange={(event) => setPassword(event.target.value)}
               required
             />
@@ -83,8 +86,9 @@ const Register = () => {
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="photoUrl"
               type="text"
+              name='photoUrl'
               placeholder="Photo URL"
-              value={photoUrl}
+              // value={photoUrl}
               onChange={(event) => setPhotoUrl(event.target.value)}
               required
             />

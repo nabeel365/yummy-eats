@@ -1,8 +1,9 @@
 import React from 'react';
+import './Banner.css'
 
 const Banner = () => {
     return (
-        <div className='sm:flex w-auto'>
+        <div className='w-auto bg-img'>
 
             <div className=''>
 
@@ -12,36 +13,66 @@ const Banner = () => {
 
             </div>
 
-            <div className="carousel w-full">
-                <div id="slide1" className="carousel-item relative w-full">
-                    <img src="https://www.daburhoney.com/images/recipes-category-banner.jpg" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide4" className="btn btn-circle">❮</a>
-                        <a href="#slide2" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide2" className="carousel-item relative w-full">
-                    <img src="https://vaya.in/recipes/wp-content/uploads/2015/07/HomePage_-Banner-1-1.jpg" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide1" className="btn btn-circle">❮</a>
-                        <a href="#slide3" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide3" className="carousel-item relative w-full">
-                    <img src="https://www.maggi.co.uk/sites/default/files/styles/maggi_desktop_image_style/public/NUK1265%20maggi%20Recipes%20banner%201500x700px%20opt2A.jpg?h=4f5b30f1&itok=DcsF1RwA" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide2" className="btn btn-circle">❮</a>
-                        <a href="#slide4" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide4" className="carousel-item relative w-full">
-                    <img src="https://as2.ftcdn.net/v2/jpg/01/57/28/31/1000_F_157283191_ALJy3vuwlPKVdDtPPCZsPpRk3BksFlwF.jpg" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide3" className="btn btn-circle">❮</a>
-                        <a href="#slide1" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-            </div>
+            <br />
+
+
+
+
+
+<div className="bg-gray-100 py-8">
+<h2 className="text-3xl font-bold text-center mb-8 text-yellow-500">Other Services</h2>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-white shadow-lg rounded-lg px-6 py-8">
+            <h2 className="text-lg font-bold mb-4">Recipe Finder Tool</h2>
+            <p className="text-gray-600">Easily search for recipes based on ingredients, cooking time, and dietary restrictions using our user-friendly recipe finder tool.</p>
+          </div>
+          <div className="bg-white shadow-lg rounded-lg px-6 py-8">
+            <h2 className="text-lg font-bold mb-4">Meal Planning</h2>
+            <p className="text-gray-600">Let us take the stress out of meal planning with our customized meal plans based on your dietary preferences and featuring a variety of delicious and healthy recipes.</p>
+          </div>
+          <div className="bg-white shadow-lg rounded-lg px-6 py-8">
+            <h2 className="text-lg font-bold mb-4">Cooking Classes</h2>
+            <p className="text-gray-600">Join our expert chefs for online cooking classes covering a variety of cuisines and cooking techniques suitable for all skill levels.</p>
+          </div>
+          <div className="bg-white shadow-lg rounded-lg px-6 py-8">
+            <h2 className="text-lg font-bold mb-4">Recipe Submissions</h2>
+            <p className="text-gray-600">Share your favorite recipes with our community by submitting them to our website. We welcome recipe submissions from our users!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<br />
+
+
+<div className="bg-gray-100 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center mb-8 text-yellow-500">Customer Reviews</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="bg-white shadow-lg rounded-lg px-6 py-8">
+            <p className="text-gray-600 mb-4">"I love this website! The recipe finder tool is amazing and has helped me discover so many new recipes."</p>
+            <p className="text-gray-800 font-bold">- Sarah R.</p>
+          </div>
+          <div className="bg-white shadow-lg rounded-lg px-6 py-8">
+            <p className="text-gray-600 mb-4">"The meal planning feature has been a game-changer for me. I no longer stress about what to cook for dinner every night!"</p>
+            <p className="text-gray-800 font-bold">- James D.</p>
+          </div>
+          <div className="bg-white shadow-lg rounded-lg px-6 py-8">
+            <p className="text-gray-600 mb-4">"I submitted one of my favorite recipes to this website and it was featured on the homepage! I'm so thrilled to have my recipe shared with others."</p>
+            <p className="text-gray-800 font-bold">- Maria L.</p>
+          </div>
+          <div className="bg-white shadow-lg rounded-lg px-6 py-8">
+            <p className="text-gray-600 mb-4">"I love this website! The recipe finder tool is amazing and has helped me discover so many new recipes."</p>
+            <p className="text-gray-800 font-bold">- Rajesh B.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
         </div>
     );
