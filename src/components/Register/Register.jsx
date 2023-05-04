@@ -14,10 +14,10 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    const photoUrl = form.photoUrl.value
-    console.log(name, email, password, photoUrl);
+    const photoURL = form.photoURL.value
+    console.log(name, email, password, photoURL);
 
-    createUser(email, password, name, photoUrl)
+    createUser(email, password, name, photoURL)
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
@@ -73,14 +73,14 @@ const Register = () => {
             />
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700 font-bold mb-2" htmlFor="photoUrl">
+            <label className="block text-gray-700 font-bold mb-2" htmlFor="photoURL">
               Photo URL
             </label>
             <input
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="photoUrl"
+              id="photoURL"
               type="text"
-              name='photoUrl'
+              name='photoURL'
               placeholder="Photo URL"
               required
             />

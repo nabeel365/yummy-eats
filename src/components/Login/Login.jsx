@@ -14,6 +14,7 @@ const handleLogin = event => {
     event.preventDefault();
 
     const form = event.target;
+    console.log(form);
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
@@ -71,7 +72,7 @@ const handleLogin = event => {
                         <p className="py-6">Welcome to our website! We are dedicated to providing you with a wide range of delicious and easy-to-follow recipes for any occasion. From quick weeknight meals to elaborate holiday feasts, our website has something for everyone. To access our full collection of recipes and personalized features, please log in below.</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form onClick={handleLogin}>
+                        <form onSubmit={handleLogin}>
                             <div className="card-body">
                                 <div className="form-control">
                                     <label className="label">
