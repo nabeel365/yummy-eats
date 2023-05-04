@@ -43,8 +43,6 @@ const Register = () => {
               type="text"
               name='name'
               placeholder="Name"
-              // value={name}
-              onChange={(event) => setName(event.target.value)}
               required
             />
           </div>
@@ -58,8 +56,6 @@ const Register = () => {
               type="email"
               name='email'
               placeholder="Email"
-              // value={email}
-              onChange={(event) => setEmail(event.target.value)}
               required
             />
           </div>
@@ -73,8 +69,6 @@ const Register = () => {
               type="password"
               name='password'
               placeholder="Password"
-              // value={password}
-              onChange={(event) => setPassword(event.target.value)}
               required
             />
           </div>
@@ -88,8 +82,6 @@ const Register = () => {
               type="text"
               name='photoUrl'
               placeholder="Photo URL"
-              // value={photoUrl}
-              onChange={(event) => setPhotoUrl(event.target.value)}
               required
             />
           </div>

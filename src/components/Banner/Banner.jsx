@@ -1,7 +1,10 @@
 import React from 'react';
 import './Banner.css'
 
+
+
 const Banner = () => {
+   
     return (
         <div className='w-auto bg-img'>
 
@@ -64,10 +67,7 @@ const Banner = () => {
             <p className="text-gray-600 mb-4">"I submitted one of my favorite recipes to this website and it was featured on the homepage! I'm so thrilled to have my recipe shared with others."</p>
             <p className="text-gray-800 font-bold">- Maria L.</p>
           </div>
-          <div className="bg-white shadow-lg rounded-lg px-6 py-8">
-            <p className="text-gray-600 mb-4">"I love this website! The recipe finder tool is amazing and has helped me discover so many new recipes."</p>
-            <p className="text-gray-800 font-bold">- Rajesh B.</p>
-          </div>
+         
         </div>
       </div>
     </div>

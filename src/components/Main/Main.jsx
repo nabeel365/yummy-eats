@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import ChefInfo from '../ChefInfo/ChefInfo';
-import Banner from '../../Banner/Banner';
+import Banner from '../Banner/Banner';
 
 const Main = () => {
     const { id } = useParams();

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import ActiveLink from '../../ActiveLink/ActiveLink';
 
 
 const Navbar = () => {
 
     const {logOut} = useContext(AuthContext);
-    console.log(logOut);
     
     const handleLogOut = ()=> {
         logOut();
@@ -49,11 +49,10 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
                            
-                            <li><Link to="/login" onClick={handleLogOut}>Logout</Link></li>
-
-                            <li><Link to="/">Home</Link> </li>
-                            <li><Link to="/blog">Blog</Link></li>
-                            <li><Link to="/login">Log In</Link></li>
+                           <button><ActiveLink to="/login" onClick={handleLogOut}> Logout </ActiveLink></button> 
+                            <button><ActiveLink to="/">Home</ActiveLink> </button>
+                            <button><ActiveLink to="/blog">Blog</ActiveLink></button>
+                            <button><ActiveLink to="/login">Log In</ActiveLink></button>
 
                         </ul>
                     </div>
