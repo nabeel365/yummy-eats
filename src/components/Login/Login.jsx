@@ -74,7 +74,7 @@ const Login = () => {
 
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn btn-warning">Login</button>
+                                    <button type='submit' className="btn btn-warning">Login</button>
                                 </div>
 
                                 <div className='text-center gap-2 flex'>

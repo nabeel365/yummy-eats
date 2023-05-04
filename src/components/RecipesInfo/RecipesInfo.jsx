@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './RecipeInfo.css'
 import { FaHeart } from 'react-icons/fa';
+// import { ToastContainer, toast } from "react-toastify";
+import toast, { Toaster } from 'react-hot-toast';
 
-
+ 
+ 
 
 const RecipesInfo = ({ recipes }) => {
   const { id, name, ingredients, photo, method, rating } = recipes;
   console.log(recipes);
 
+  
+const notify = () => 
+toast.success('Recipe Added To Favourites !', {
+  style: {
+    border: '1px solid yellow',
+    padding: '16px',
+    color: 'red',
+  },
+  iconTheme: {
+    primary: 'yellow',
+    secondary: 'red',
+  },
+});
 
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  const handleClick = () => {
+    setIsDisabled(true);
+  };
+  
 
   return (
     <div>
@@ -35,16 +57,24 @@ const RecipesInfo = ({ recipes }) => {
 
             <p> <strong>Method:-</strong> {method} </p>
 
+
           </div>
 
+
         </section>
+
+ 
+
+<div>
+  <button className='btn btn-warning m-3' onClick= {() => {notify() ; handleClick()} } disabled={isDisabled}> Add to Favourite</button>
+  <Toaster />
+</div>
 
 
         <strong className='text-lg p-5'> {rating} </strong>
 
 
       </div>
-
 
     </div>
   );

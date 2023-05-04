@@ -9,7 +9,21 @@ const RegistrationPage = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Code to submit the form data to the server
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(name, email, password);
+
+    createUser(email, password)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+      })
+      .catch(error => {
+        console.log(error)
+      })
   };
 
   return (
