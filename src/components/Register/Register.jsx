@@ -5,8 +5,9 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Register = () => {
 
-  const {user, createUser} = useContext(AuthContext);
-
+  const {user, createUser, name, photoURL, updateProfileInfo} = useContext(AuthContext);
+  
+  const [error, setError] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,16 +18,40 @@ const Register = () => {
     const photoURL = form.photoURL.value
     console.log(name, email, password, photoURL);
 
+    setError('')
+
+    if(password.length < 6 && password.length !==0){
+      // alert('Password Should be 6 characters or more');
+      setError('Password Should be 6 characters or more');
+      return;
+    }
+
+    //  .................................... ...............................
+    // this works only when required is removed from password input
+    //  .................................... ...............................
+
+    if(email.length == 0  || password.length == 0 ){
+      setError('Email or Password field can not be empty')
+      return;
+
+    }
+
     createUser(email, password, name, photoURL)
       .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        updateProfileInfo(result.user, name, photoURL);
+
         form.reset();
+
       })
       .catch(error => {
         console.log(error)
       })
   };
+
+
+  
 
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
@@ -93,6 +118,9 @@ const Register = () => {
               Register
             </button>
           </div>
+          <br />
+<h1 className='bg-red-500 font-semibold'> {error} </h1>
+
           <br />
           <p>Already have an account ? <Link className='text-warning' to="/login">Login</Link></p>
         </form>

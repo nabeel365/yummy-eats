@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
@@ -7,28 +7,41 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
 
-const {user, setUser, googleSignIn, githubSignIn, signIn} = useContext(AuthContext)
-   
+    const { user, setUser, googleSignIn, githubSignIn, signIn } = useContext(AuthContext)
 
-const handleLogin = event => {
-    event.preventDefault();
+    const [error, setError] = useState('');
 
-    const form = event.target;
-    console.log(form);
-    const email = form.email.value;
-    const password = form.password.value;
-    console.log(email, password);
+    const navigate = useNavigate();
 
-    signIn(email, password)
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-            form.reset();
-        })
-        .catch(error => {
-            console.log(error)
-        })
-}
+    // location
+    const location = useLocation();
+    console.log(location);
+
+    const from = location.state?.from?.pathname || '/';
+
+
+    const handleLogin = event => {
+        event.preventDefault();
+
+        const form = event.target;
+        console.log(form);
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                form.reset();
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error)
+                alert(error.message)
+                setError(error.message)
+            })
+    }
 
 
     const handleGoogleSignIn = () => {
@@ -36,21 +49,21 @@ const handleLogin = event => {
 
         // googgle login 
 
-       googleSignIn()
+        googleSignIn()
             .then(result => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
                 setUser(loggedInUser);
             })
             .catch(error => {
-                console.log( error.message);
+                console.log(error.message);
             })
     }
 
     // github sign in
 
     const handleGithubSignIn = () => {
-       githubSignIn()
+        githubSignIn()
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
@@ -61,7 +74,7 @@ const handleLogin = event => {
             })
     }
 
-   
+
 
     return (
         <div>
@@ -78,7 +91,7 @@ const handleLogin = event => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" placeholder="email"  name='email' className="input input-bordered" />
+                                    <input type="email" placeholder="email" name='email' className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -99,18 +112,22 @@ const handleLogin = event => {
                                 </div>
 
                                 <div className='text-center gap-2 flex'>
-                                    <Link className='' onClick={handleGoogleSignIn}> <button className='border rounded'>  Sign In With Google <FaGoogle/> </button> </Link>
+                                    <Link className='' onClick={handleGoogleSignIn}> <button className='border rounded'>  Sign In With Google <FaGoogle /> </button> </Link>
 
-                                    <Link className='' onClick={handleGithubSignIn}> <button className='border rounded'>  Sign In With GitHub <FaGithub/>   </button> </Link>
-                                    
+                                    <Link className='' onClick={handleGithubSignIn}> <button className='border rounded'>  Sign In With GitHub <FaGithub />   </button> </Link>
+
 
                                 </div>
 
-                                
+
                                 <p>New to our site? Please <Link className='text-warning' to="/register"> Register </Link></p>
 
 
                             </div>
+                            <h1 className='bg-red-500 text-center'>
+                                {error}
+                            </h1>
+
                         </form>
 
                     </div>
