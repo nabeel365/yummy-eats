@@ -71,7 +71,7 @@ toast.success('Recipe Added To Favourites !', {
 </div>
 
 
-        <strong className='text-lg p-5'> {rating} </strong>
+        <strong className='text-lg p-5'> Ratings:-  {rating} </strong>
 
 
       </div>

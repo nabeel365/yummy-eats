@@ -1,39 +1,55 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, signOut } from 'firebase/auth';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-import app from '../../firebase.config';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 
 
 const Login = () => {
 
-    const [user, setUser] = useState(null);
+const {user, setUser, googleSignIn, githubSignIn, signIn} = useContext(AuthContext)
+   
 
-    const auth = getAuth(app);
-    const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider();
+const handleLogin = event => {
+    event.preventDefault();
+
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    signIn(email, password)
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+            form.reset();
+        })
+        .catch(error => {
+            console.log(error)
+        })
+}
+
 
     const handleGoogleSignIn = () => {
 
 
         // googgle login 
 
-        signInWithPopup(auth, googleProvider)
+       googleSignIn()
             .then(result => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
                 setUser(loggedInUser);
             })
             .catch(error => {
-                console.log('error', error.message);
+                console.log( error.message);
             })
     }
 
     // github sign in
 
     const handleGithubSignIn = () => {
-        signInWithPopup(auth, githubProvider)
+       githubSignIn()
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
@@ -55,7 +71,7 @@ const Login = () => {
                         <p className="py-6">Welcome to our website! We are dedicated to providing you with a wide range of delicious and easy-to-follow recipes for any occasion. From quick weeknight meals to elaborate holiday feasts, our website has something for everyone. To access our full collection of recipes and personalized features, please log in below.</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form>
+                        <form onClick={handleLogin}>
                             <div className="card-body">
                                 <div className="form-control">
                                     <label className="label">
@@ -75,6 +91,10 @@ const Login = () => {
                                 </div>
                                 <div className="form-control mt-6">
                                     <button type='submit' className="btn btn-warning">Login</button>
+                                </div>
+
+                                <div className='text-center font-bold'>
+                                    OR
                                 </div>
 
                                 <div className='text-center gap-2 flex'>
