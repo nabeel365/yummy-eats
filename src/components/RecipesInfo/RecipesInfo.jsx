@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './RecipeInfo.css'
-import { FaHeart } from 'react-icons/fa';
-// import { ToastContainer, toast } from "react-toastify";
 import toast, { Toaster } from 'react-hot-toast';
 
  
