@@ -111,16 +111,17 @@ const Login = () => {
                                     OR
                                 </div>
 
-                                <div className='text-center gap-2 flex'>
-                                    <Link className='' onClick={handleGoogleSignIn}> <button className='border rounded'>  Sign In With Google <FaGoogle /> </button> </Link>
+                                <div className='text-center '>
+                                    
+                                    <Link className='' onClick={handleGoogleSignIn}> <button className='border rounded   '>  <span className='flex items-center'> Sign In With  &nbsp;  <FaGoogle className='text-lg' />  </span> </button> </Link>
 
-                                    <Link className='' onClick={handleGithubSignIn}> <button className='border rounded'>  Sign In With GitHub <FaGithub />   </button> </Link>
+                                    <Link className='' onClick={handleGithubSignIn}> <button className='border rounded  '>  <span className='flex items-center'> Sign In With  &nbsp; <FaGithub className='text-lg'  />  </span>  </button> </Link>
 
 
                                 </div>
 
 
-                                <p>New to our site? Please <Link className='text-warning' to="/register"> Register </Link></p>
+                                <p className='text-center py-1'>New to our site? Please <Link className='text-warning' to="/register"> Register </Link></p>
 
 
                             </div>

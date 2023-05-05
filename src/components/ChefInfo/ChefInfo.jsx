@@ -31,7 +31,7 @@ const ChefInfo = ({ chefs, }) => {
 
                             </div>
                             <div className="card-actions justify-center">
-                                <Link to={`/recipes/${id}`}>   <button className="btn btn-warning"> View Recipes</button> </Link>
+                                <Link to={`/recipes/${id}`}>   <button className="btn btn-warning">  View Recipes</button> </Link>
                             </div>
                         </div>
                     </div>
