@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 
@@ -8,6 +8,14 @@ const Register = () => {
   const {user, createUser, name, photoURL, updateProfileInfo} = useContext(AuthContext);
   
   const [error, setError] = useState('');
+
+  const navigate = useNavigate();
+
+  // location
+  const location = useLocation();
+  console.log(location);
+
+  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -43,10 +51,13 @@ const Register = () => {
         updateProfileInfo(result.user, name, photoURL);
 
         form.reset();
+        navigate(from, { replace: true })
+
 
       })
       .catch(error => {
         console.log(error)
+        setError(error.message)
       })
   };
 
@@ -125,6 +136,7 @@ const Register = () => {
           <p>Already have an account ? <Link className='text-warning' to="/login">Login</Link></p>
         </form>
       </div>
+      
     </div>
   );
 };

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 const ChefInfo = ({ chefs, }) => {
-    const { id, name, picture, likes, experience, bio } = chefs;
+    const { id, name, picture, likes, experience, bio, recipes } = chefs;
 
     console.log(name);
     return (
@@ -27,6 +27,7 @@ const ChefInfo = ({ chefs, }) => {
                             <div className='flex'>
                                 <p> <strong> Experience : </strong> {experience} years</p>
                                 <p> <strong>Likes : </strong> {likes} </p>
+                                <p> <strong> Recipes:- </strong> {recipes}  </p>
 
                             </div>
                             <div className="card-actions justify-center">
