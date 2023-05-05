@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Main></Main>,
-        loader: () => fetch(`http://localhost:7000/chefs`),
+        loader: () => fetch(`https://yummy-foods-nabeel365.vercel.app/chefs`),
 
 
       },
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: "recipes/:id",
         element: <PrivateRoute> <ViewRecipes></ViewRecipes> </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:7000/recipes/${params.id}`)
+        loader: ({params}) => fetch(`https://yummy-foods-nabeel365.vercel.app/recipes/${params.id}`)
 
       }
 
